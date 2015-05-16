@@ -1,0 +1,11 @@
+ALTER TABLE Commande
+ADD CONSTRAINT FK_COM_CLI FOREIGN KEY (code_c) REFERENCES Client (code_c);
+
+ALTER TABLE Commande
+ADD CONSTRAINT FK_COM_VEN FOREIGN KEY (code_v) REFERENCES Vendeur (code_v);
+
+ALTER TABLE Ligne_commande
+ADD CONSTRAINT FK_LIG_COM FOREIGN KEY (numero) REFERENCES Commande (numero);
+
+ALTER TABLE Ligne_commande
+ADD CONSTRAINT FK_LIG_PRO FOREIGN KEY (reference) REFERENCES Produit (reference);
